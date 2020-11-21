@@ -8,10 +8,10 @@ import PokemonProfile from './containers/PokemonProfile'
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path={'/'} component={PokemonList} />
-        <Route exact path={'/caught'} component={CaughtPokemonList} />
-        <Route exact path={'/pokemon/:name'} component={PokemonProfile} />
+      <Switch>        
+        <Route path={'/pokemon/:name'} component={PokemonProfile} />
+        <Route path={'/caught'} component={CaughtPokemonList} />
+        <Route path={'/'} exact component={PokemonList} />
         <Redirect to={'/'} />
       </Switch>
     </div>

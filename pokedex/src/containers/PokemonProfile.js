@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import NavBar from '../components/Navigation/NavBar/NavBar'
 
-const PokemonProfile = () => {
+const PokemonProfile = props => {
+   const { match } = props
+   const { params } = match
+   const { name } = params
    return (
-      <div>profile of pokemon</div>
+      <Fragment>
+         <NavBar />
+         <div>{`profile of pokemon - ${name}`}</div>
+      </Fragment>
    )
 }
 

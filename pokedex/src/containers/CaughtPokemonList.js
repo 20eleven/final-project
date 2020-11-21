@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import NavBar from '../components/Navigation/NavBar/NavBar'
 
 const CaughtPokemonList = () => {
    return (
-      <div>caught list</div>
+      <Fragment>
+         <NavBar />
+         <div>caught list</div>
+      </Fragment>
    )
 }
 

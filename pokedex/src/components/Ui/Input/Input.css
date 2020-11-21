@@ -1,0 +1,29 @@
+input {
+   /* margin: 0 50px; */
+   background-color: transparent;
+   border: none;
+   color: #fff;
+   font-size: 17px;
+}
+input::placeholder {
+   color: #fff;
+   text-align: center;
+}
+input:focus {
+   /* background: royalblue; */
+   outline:none;
+} 
+input:focus::placeholder {
+   color: transparent;
+   border-bottom: 1px solid #fff;
+}
+
+.inputItem {
+   margin: 0 25px 0 25px;
+   padding: 21px 0;
+   height: 60px;
+}
+.inputItem:hover {
+   background-color: royalblue;
+   transition: 250ms ease-in;
+}
