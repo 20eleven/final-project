@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import NavBar from '../components/Navigation/NavBar/NavBar'
 
-const CaughtPokemonList = () => {
+const CaughtPokemonList = () => {//TODO: сделать карточки покемонов круглыми 
    return (
       <Fragment>
          <NavBar />

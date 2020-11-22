@@ -1,0 +1,65 @@
+.listWrapper {
+   max-width: 900px;
+   min-width: 320px;
+   width: 90%;
+   margin: 75px auto auto auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch;
+   justify-content: center;
+}
+@media (max-width: 740px) {
+   .listWrapper{
+      margin: 135px auto auto auto;
+   }
+}
+@media (max-width: 454px) {
+   .listWrapper{
+      margin: 195px auto auto auto;
+   }
+}
+.listWrapper .pokemonCard {
+   background-color: rgba(68, 109, 222, 0.5);
+   margin: 15px;
+   display: flex;
+   /* flex-wrap: wrap; */
+   height: 300px;
+   width: 250px;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   border: 2px solid rgb(237, 85, 84);
+   border-radius: 5px;
+}
+.listWrapper .pokemonCard:hover {
+   transition: 250ms;
+   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.4);
+   background-color: rgba(68, 109, 222, 0.3);
+}
+.pokemonCard a {
+   text-decoration: none;
+   background-color: rgba(68, 109, 222, 0.9);
+   width: 100%;
+   padding: 3px 0 3px 15px;
+   color: #fff;
+}
+.listWrapper .pokemonCard:hover a {
+   background-color: royalblue;
+   color: white;
+}
+.listWrapper .pokemonCard .imgWrapper {
+   width: 200px; 
+   height: 200px;
+   margin-bottom: -45px;
+   background-color: rgb(237, 85, 84);
+   border-radius: 50%;
+}
+.listWrapper .pokemonCard .imgWrapper img {
+   height: 100%;
+   width: auto;
+}
+.listWrapper .pokemonCard .imgWrapper img:hover {
+   border: 3px solid royalblue;
+   border-radius: 50%;
+   background-color: rgba(0, 0, 0, 0.2);
+}

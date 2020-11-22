@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import NavBar from '../components/Navigation/NavBar/NavBar'
 import { getPokemonList } from '../store/actions/pokemonActions'
+import './PokemonList.css'
 
 const PokemonList = () => {
    const dispatch = useDispatch()
@@ -17,17 +18,31 @@ const PokemonList = () => {
 
    const showData = () => {
       if (pokemonList.loading) {
-         return <p>loading</p>
+         return <p>loading</p> //TODO: открисовать компонент и вытащить его из под меню 
       }
       if (pokemonList.data !== []) {
-         return pokemonList.data.map(pokeElement => { //TODO: add key
-            return (
-               <div>
-                  <p>{pokeElement.name}</p>
-                  <Link to={`/pokemon/${pokeElement.name}`}>Check</Link>
-               </div>
-            )
-         })
+         return (
+            <div className={'listWrapper'}>
+               {pokemonList.data.map(pokeElement => { //TODO: add key и перенести в отдельный контейнер 
+                  return (
+                     
+                     <div className={'pokemonCard'}>
+                        <div className={'imgWrapper'}>
+                           <img src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} alt={`${pokeElement.name}`} />
+                        </div>
+                       
+                        {/* при нажатии на картинку покемон должен быть пойман, то есть при нажатии все затемняется появляетяс бордер и покемон считается пойманым */}
+                        {/* <div>Caught</div> */}
+                        
+                        <Link to={`/pokemon/${pokeElement.name}`}>{pokeElement.name.toUpperCase()}</Link>
+                        
+                       
+                     </div>
+                     
+                  )
+               })}
+            </div>
+         )
       }     
       if (pokemonList.errorMsg !== '') {
          return <p>{pokemonList.errorMsg}</p>
