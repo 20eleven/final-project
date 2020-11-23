@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import NavBar from '../components/Navigation/NavBar/NavBar'
-import { getPokemonList } from '../store/actions/pokemonActions'
+import { getPokemonList } from '../store/actions/getPokemonListActions'
 import './PokemonList.css'
 
 const PokemonList = () => {
@@ -17,9 +17,7 @@ const PokemonList = () => {
    }
 
    const showData = () => {
-      if (pokemonList.loading) {
-         return <p>loading</p> //TODO: открисовать компонент и вытащить его из под меню 
-      }
+      
       if (pokemonList.data !== []) {
          return (
             <div className={'listWrapper'}>
@@ -34,7 +32,7 @@ const PokemonList = () => {
                         {/* при нажатии на картинку покемон должен быть пойман, то есть при нажатии все затемняется появляетяс бордер и покемон считается пойманым */}
                         {/* <div>Caught</div> */}
                         
-                        <Link to={`/pokemon/${pokeElement.name}`}>{pokeElement.name.toUpperCase()}</Link>
+                        <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
                         
                        
                      </div>
@@ -43,7 +41,12 @@ const PokemonList = () => {
                })}
             </div>
          )
-      }     
+      }    
+      
+      if (pokemonList.loading) {
+         return <p>loading</p> //TODO: открисовать компонент и вытащить его из под меню 
+      }
+
       if (pokemonList.errorMsg !== '') {
          return <p>{pokemonList.errorMsg}</p>
       }

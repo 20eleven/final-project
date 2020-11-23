@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Switch>        
-        <Route path={'/pokemon/:name'} component={PokemonProfile} />
+        <Route path={'/pokemon/:id'} component={PokemonProfile} />
         <Route path={'/caught'} component={CaughtPokemonList} />
         <Route path={'/'} exact component={PokemonList} />
         <Redirect to={'/'} />
