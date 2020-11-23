@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 import Input from '../../Ui/Input/Input'
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = (props) => {
    return (
       <nav>
-         <Input />
+         <Input story={props.story} />
          <NavLink to={'/'}>
             <div className='navItem'>
                Pokedex

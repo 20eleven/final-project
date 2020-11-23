@@ -2,6 +2,8 @@ import React, { Fragment, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPokemon } from '../store/actions/getPokemonActions'
 import NavBar from '../components/Navigation/NavBar/NavBar'
+import ErrorMsg from '../components/Ui/ErrorMessage/ErrorMsg'
+import Loader from '../components/Ui/Loader/Loader'
 import './PokemonProfile.css'
 
 
@@ -20,24 +22,24 @@ const PokemonProfile = props => {
                <div className={'item'}>
                   <h1>#{pokemonState.data.id} - {pokemonState.data.name}</h1>
                   <div className={'imgSeparateWrapper'}>
-                  <img src={`${process.env.PUBLIC_URL}/pokemons/${pokemonState.data.id}.png`} alt={pokemonState.data.name} />
+                     <img src={`${process.env.PUBLIC_URL}/pokemons/${pokemonState.data.id}.png`} alt={pokemonState.data.name} />
                   </div>
                </div>
             </div>
          )
       }
       if (pokemonState.loading) {
-         return <p>Loading...</p>
+         return <Loader />
       }
       if (pokemonState.errorMsg !== '') {
-         return <p>{pokemonState.errorMsg}</p>
+         return <ErrorMsg>{pokemonState.errorMsg}</ErrorMsg>
       }
-      return <p>Error getting pokemon</p>
+      return <ErrorMsg>Error getting pokemon</ErrorMsg>
    }
 
    return (
       <Fragment>
-         <NavBar />
+         <NavBar story={props.history} />
          {showData()}
       </Fragment>
    )

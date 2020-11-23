@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import NavBar from '../components/Navigation/NavBar/NavBar'
 import { getPokemonList } from '../store/actions/getPokemonListActions'
+import ErrorMsg from '../components/Ui/ErrorMessage/ErrorMsg'
+import Loader from '../components/Ui/Loader/Loader'
 import './PokemonList.css'
 
-const PokemonList = () => {
+const PokemonList = (props) => { 
    const dispatch = useDispatch()
    const pokemonList = useSelector(state => state.pokeList)
    useEffect(() => {
@@ -17,13 +19,14 @@ const PokemonList = () => {
    }
 
    const showData = () => {
-      
+      if (pokemonList.loading) {
+         return <Loader /> 
+      }  
       if (pokemonList.data !== []) {
          return (
             <div className={'listWrapper'}>
                {pokemonList.data.map(pokeElement => { //TODO: add key и перенести в отдельный контейнер 
-                  return (
-                     
+                  return (                  
                      <div className={'pokemonCard'}>
                         <div className={'imgWrapper'}>
                            <img src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} alt={`${pokeElement.name}`} />
@@ -33,29 +36,22 @@ const PokemonList = () => {
                         {/* <div>Caught</div> */}
                         
                         <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
-                        
-                       
-                     </div>
-                     
+                      
+                     </div>                     
                   )
                })}
             </div>
          )
       }    
-      
-      if (pokemonList.loading) {
-         return <p>loading</p> //TODO: открисовать компонент и вытащить его из под меню 
-      }
-
       if (pokemonList.errorMsg !== '') {
-         return <p>{pokemonList.errorMsg}</p>
+         return <ErrorMsg>{pokemonList.errorMsg}</ErrorMsg>
       }
-      return <p>Unable to get data</p>
+      return <ErrorMsg>Unable to get data</ErrorMsg>
    }
 
    return (
       <Fragment>
-         <NavBar />
+         <NavBar story={props.history} />
          {showData()}
       </Fragment>
    )

@@ -1,0 +1,10 @@
+.dangerMsg {
+   background-color: black;
+   color: red;
+   margin: 250px auto;
+   width: 100%;
+   text-align: center;
+}
+.dangerMsg p {
+   font-size: 40px;
+}
