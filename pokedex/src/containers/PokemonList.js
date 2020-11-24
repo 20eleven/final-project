@@ -5,6 +5,7 @@ import NavBar from '../components/Navigation/NavBar/NavBar'
 import { getPokemonList } from '../store/actions/getPokemonListActions'
 import ErrorMsg from '../components/Ui/ErrorMessage/ErrorMsg'
 import Loader from '../components/Ui/Loader/Loader'
+import ReactPaginate from 'react-paginate'
 import './PokemonList.css'
 
 const PokemonList = (props) => { 
@@ -27,7 +28,7 @@ const PokemonList = (props) => {
             <div className={'listWrapper'}>
                {pokemonList.data.map(pokeElement => { //TODO: add key и перенести в отдельный контейнер 
                   return (                  
-                     <div className={'pokemonCard'}>
+                     <div className={'pokemonCard'} key={pokeElement.name}>
                         <div className={'imgWrapper'}>
                            <img src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} alt={`${pokeElement.name}`} />
                         </div>
@@ -53,6 +54,17 @@ const PokemonList = (props) => {
       <Fragment>
          <NavBar story={props.history} />
          {showData()}
+         {pokemonList.data !== [] && (
+            <div className={'paginateWrapper'}>
+               <ReactPaginate 
+                  pageCount={Math.ceil(pokemonList.count / 15)}
+                  pageRangeDisplayed={2}
+                  marginPagesDisplayed={1}
+                  onPageChange={(data) => fetchData(data.selected + 1)}
+                  containerClassName={'pagination'}
+               />
+            </div>
+         )}
       </Fragment>
    )
 }

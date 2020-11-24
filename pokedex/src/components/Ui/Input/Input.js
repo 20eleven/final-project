@@ -1,18 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { inputSearch } from '../../../store/actions/inputSearchActions'
 import './Input.css'
 
 const Input = (props) => {
-   // const [search, setSearch] = useState('')
+   const [search, setSearch] = useState('')
    const dispatch = useDispatch()
    const searchState = useSelector(state => state.pokeSearch)
    useEffect(() => {
-      dispatch(inputSearch())
+      if (search !== '') {
+         dispatch(inputSearch(search.toString())) //FIXME: при передаче search выдает весь список покемонов(тк пустая строка), но при просто строке ('pikachu), выдает нужное 
+      }
    }, [])
 
+   // console.log(search);
+   // console.log(searchState);
+
    const handleChange = (event) => {
-      inputSearch(event.target.value)
+      setSearch(event.target.value)
    }
    const handleKeyPress = (event) => {
       if (event.key === 'Enter') {
@@ -25,7 +30,7 @@ const Input = (props) => {
          <input 
             type='text'
             placeholder='Search pokemon...'
-            // onChange={event => setSearch(event.targer.value)}
+            value={search}
             onChange={handleChange}
             onKeyPress={handleKeyPress}
          />

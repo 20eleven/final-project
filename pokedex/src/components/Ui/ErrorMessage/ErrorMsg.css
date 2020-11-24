@@ -1,9 +1,11 @@
 .dangerMsg {
-   background-color: black;
+   background-color: rgba(0, 0, 0, 0.8);
    color: red;
+   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.8);
    margin: 250px auto;
    width: 100%;
    text-align: center;
+   text-transform: uppercase;
 }
 .dangerMsg p {
    font-size: 40px;

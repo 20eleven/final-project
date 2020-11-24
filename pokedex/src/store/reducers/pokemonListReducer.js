@@ -3,7 +3,8 @@ import { POKEMON_LIST_FAIL, POKEMON_LIST_LOADING, POKEMON_LIST_SUCCESS } from ".
 const initialState = {
    loading: false,
    data: [],
-   errorMsg: ''
+   errorMsg: '',
+   count: 720 //TODO: реализовать счетчик, например получать массив покемонов и боать значение длины или запушить в массив данны параметр 
 }
 
 const pokemonListReducer = (state = initialState, action) => {
@@ -25,7 +26,8 @@ const pokemonListReducer = (state = initialState, action) => {
             ...state,
             loading: false,
             data: action.payload,
-            errorMsg: ''
+            errorMsg: '',
+            // count: action.payload.count
          }
       default: 
          return state

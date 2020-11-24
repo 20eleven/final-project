@@ -13,7 +13,7 @@ export const getPokemonList = (page) => {
          })
 
          const perPage = 15
-         const offset = (page * perPage) - perPage
+         const offset = page
 
          const res = await axios.get(`http://localhost:5000/pokemons?_page=${offset}&_limit=${perPage}`) 
          dispatch({
