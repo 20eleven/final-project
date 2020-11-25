@@ -1,0 +1,60 @@
+.caughtListWrapper {
+   max-width: 900px;
+   min-width: 320px;
+   width: 90%;
+   margin: 75px auto auto auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch;
+   justify-content: center;
+}
+
+@media (max-width: 740px) {
+   .caughtListWrapper{
+      margin: 135px auto auto auto;
+   }
+}
+
+@media (max-width: 454px) {
+   .caughtListWrapper{
+      margin: 195px auto auto auto;
+   }
+}
+
+.caughtListWrapper .caughtPokemonCard {
+   background-color: rgba(68, 109, 222, 0.1);
+   margin: 15px;
+   display: flex;
+   height: 360px;
+   width: 250px;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   border-left: 2px solid royalblue;
+   border-bottom: 2px solid royalblue;
+   border-radius: 5px;
+}
+
+.caughtListWrapper .caughtPokemonCard .caughtImgWrapper {
+   width: 200px; 
+   height: 200px;
+   background-color: rgb(237, 84, 84);
+   border-radius: 50%;
+}
+
+.caughtListWrapper .caughtPokemonCard .caughtImgWrapper img {
+   height: 100%;
+   width: auto;  
+   border: 3px solid royalblue;
+   border-radius: 50%;   
+}
+
+.caughtListWrapper .caughtPokemonCard h1 {
+   color: royalblue;
+   text-transform: capitalize;
+}
+
+.caughtListWrapper .caughtPokemonCard p {
+   color: royalblue;
+   text-align: center;
+}

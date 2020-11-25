@@ -6,7 +6,7 @@ import './NavBar.css'
 const NavBar = (props) => {
    return (
       <nav>
-         <Input story={props.story} />
+         <Input story={props.story} serchingPoke={props.searching}/>
          <NavLink to={'/'}>
             <div className='navItem'>
                Pokedex

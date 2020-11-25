@@ -8,14 +8,19 @@ import Loader from '../components/Ui/Loader/Loader'
 import ReactPaginate from 'react-paginate'
 import './PokemonList.css'
 import { catchPokemon } from '../store/actions/catchPokemonAction'
-
-
+import { inputSearch } from '../store/actions/inputSearchActions'
 
 const PokemonList = (props) => { 
    const dispatch = useDispatch()
    const pokemonList = useSelector(state => state.pokeList)
    // console.log(pokemonList.data);
 
+   const searchState = useSelector(state => state.pokeSearch)
+   const handleChange = useCallback((event) => {
+      dispatch(inputSearch(event.target.value))
+   }, [dispatch])
+   // console.log(searchState);
+   //TODO: допилить передачу данных для рендера покемонов из поиска
 
    useEffect(() => {
       fetchData(1)
@@ -24,25 +29,16 @@ const PokemonList = (props) => {
       dispatch(getPokemonList(page))
    }
    
-   const caughtPokemonHandle = useCallback((id, name) => {
-      dispatch(catchPokemon(id, name)) //TODO: выполнить проверку пойман ли уде покемон
+   const caughtPokemonHandle = useCallback((id, name, caught) => {
+      if (!caught) {
+         dispatch(catchPokemon(id, name))
+      }     
    }, [dispatch])
-
    
-
-   pokemonList.data.forEach(pokemonImgItem => {
-      if(pokemonImgItem.isCaught) {
-         console.log('coughted');
-         
-      }
-   })
-   //TODO: допилить динамическое добавлени класса определенному элементу
-   
-
-   const showData = () => {
+   const showData = () => {     
       if (pokemonList.loading) {
          return <Loader /> 
-      }  
+      }       
       if (pokemonList.data !== []) {
          return (
             <div className={'listWrapper'}>
@@ -53,9 +49,8 @@ const PokemonList = (props) => {
                            <img 
                               src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} 
                               alt={`${pokeElement.name}`} 
-                              onClick={() => caughtPokemonHandle(pokeElement.id, pokeElement.name)}
-                              id={pokeElement.id}
-                              // className={'catchDisabled'}                             
+                              onClick={() => caughtPokemonHandle(pokeElement.id, pokeElement.name, pokeElement.isCaught)}
+                              className={pokeElement.className}                             
                            />
                         </div>
                        <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
@@ -73,7 +68,7 @@ const PokemonList = (props) => {
 
    return (
       <Fragment>
-         <NavBar story={props.history} />
+         <NavBar story={props.history} searching={handleChange} />
          {showData()}
          {pokemonList.data !== [] && (
             <div className={'paginateWrapper'}>

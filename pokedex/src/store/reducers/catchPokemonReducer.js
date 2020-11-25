@@ -1,4 +1,7 @@
-import { CAUGHT_POKEMON_SUCCESS, CAUGHT_POKEMON_FAIL} from '../actions/actionTypes'
+import { 
+   CAUGHT_POKEMON_SUCCESS, 
+   CAUGHT_POKEMON_FAIL
+} from '../actions/actionTypes'
 
 const initialState = {
    data: [],
@@ -17,7 +20,8 @@ const catchPokemonReducer = (state = initialState, action) => {
          cachedPokemons.forEach(pokemon => {
             if (pokemon.id === action.id) {
                pokemon.isCaught = "true"
-               // pokemon.caughtDate = new Date(Date.now())
+               pokemon.caughtDate = new Date(Date.now())
+               pokemon.className = "catchDisabled"
             }
          })
          return {

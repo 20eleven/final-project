@@ -13,7 +13,6 @@ export const getPokemon = (pokemon) => {
          })
 
          const res = await axios.get(`http://localhost:5000/pokemons/${pokemon}`) 
-
          dispatch({
             type: POKEMON_MULTIPLE_SUCCESS,
             payload: res.data,

@@ -1,4 +1,8 @@
-import { POKEMON_SEARCH_LOADING, POKEMON_SEARCH_SUCCESS, POKEMON_SEARCH_FAIL } from "../actions/actionTypes"
+import { 
+   POKEMON_SEARCH_LOADING, 
+   POKEMON_SEARCH_SUCCESS, 
+   POKEMON_SEARCH_FAIL 
+} from "../actions/actionTypes"
 
 const initialState = {
    loading: false,

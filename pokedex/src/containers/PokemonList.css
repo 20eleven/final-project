@@ -30,11 +30,13 @@
    border: 2px solid rgb(237, 85, 84);
    border-radius: 5px;
 }
+
 .listWrapper .pokemonCard:hover {
    transition: 250ms;
    box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.4);
    background-color: rgba(68, 109, 222, 0.3);
 }
+
 .pokemonCard a {
    text-decoration: none;
    background-color: rgba(68, 109, 222, 0.9);
@@ -42,10 +44,12 @@
    padding: 3px 0 3px 15px;
    color: #fff;
 }
+
 .listWrapper .pokemonCard:hover a {
    background-color: royalblue;
    color: white;
 }
+
 .listWrapper .pokemonCard .imgWrapper {
    width: 200px; 
    height: 200px;
@@ -53,15 +57,18 @@
    background-color: rgb(237, 85, 84);
    border-radius: 50%;
 }
+
 .listWrapper .pokemonCard .imgWrapper img {
    height: 100%;
    width: auto;
-   cursor: pointer;
+   /* cursor: pointer; */
 }
+
 .catchDisabled {
    border: 3px solid royalblue;
    border-radius: 50%;
    background-color: rgba(0, 0, 0, 0.4);
+   cursor: not-allowed;
 }
 
 
@@ -74,6 +81,7 @@
    padding: 22px;
    color: #fff;
 }
+
 .pagination {
    display: flex;
    justify-content: space-between;
@@ -82,9 +90,11 @@
    list-style: none;
    padding: 0;
 }
+
 .pagination li {
    cursor: pointer;
 }
+
 .selected {
    font-weight: 700;
    text-shadow: 1px 1px 5px royalblue;

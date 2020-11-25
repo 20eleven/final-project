@@ -23,10 +23,10 @@ const CaughtPokemonList = () => {//TODO: сделать карточки пок�
                {caughtPokemonList.data.map(caughtPokeElement => {
                   return (
                      <div className={'caughtPokemonCard'} key={caughtPokeElement.name}>
+                        <h1>{caughtPokeElement.name}</h1>
                         <div className={'caughtImgWrapper'}>
                            <img src={`${process.env.PUBLIC_URL}/pokemons/${caughtPokeElement.id}.png`} alt={`${caughtPokeElement.name}`} />
-                        </div>
-                        <h1>{caughtPokeElement.name}</h1>
+                        </div>                        
                         <p>{caughtPokeElement.caughtDate}</p> 
                      </div>
                   )
@@ -39,8 +39,6 @@ const CaughtPokemonList = () => {//TODO: сделать карточки пок�
       }
       return <ErrorMsg>Unable to get data</ErrorMsg>
    }
-
-
 
    return (
       <Fragment>

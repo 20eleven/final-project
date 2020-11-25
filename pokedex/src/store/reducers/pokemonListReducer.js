@@ -1,10 +1,14 @@
-import { POKEMON_LIST_FAIL, POKEMON_LIST_LOADING, POKEMON_LIST_SUCCESS } from "../actions/actionTypes"
+import { 
+   POKEMON_LIST_FAIL, 
+   POKEMON_LIST_LOADING, 
+   POKEMON_LIST_SUCCESS 
+} from "../actions/actionTypes"
 
 const initialState = {
    loading: false,
    data: [],
    errorMsg: '',
-   count: 720 //TODO: реализовать счетчик, например получать массив покемонов и боать значение длины или запушить в массив данны параметр 
+   count: 720 
 }
 
 const pokemonListReducer = (state = initialState, action) => {

@@ -6,7 +6,6 @@ import ErrorMsg from '../components/Ui/ErrorMessage/ErrorMsg'
 import Loader from '../components/Ui/Loader/Loader'
 import './PokemonProfile.css'
 
-
 const PokemonProfile = props => {
    const pokemonId = props.match.params.id
    const dispatch = useDispatch()
@@ -17,13 +16,19 @@ const PokemonProfile = props => {
 
    const showData = () => {
       if (pokemonState.data.id !== undefined) {
+         const catched = () => {
+            if (pokemonState.data.isCaught) {
+               return <p>Caught: {pokemonState.data.caughtDate}</p>
+            }
+         }
          return (
             <div className={'pokemonWrapper'}>
                <div className={'item'}>
-                  <h1>#{pokemonState.data.id} - {pokemonState.data.name}</h1>
+                  <h1>#{pokemonState.data.id} - {pokemonState.data.name}</h1>                  
                   <div className={'imgSeparateWrapper'}>
-                     <img src={`${process.env.PUBLIC_URL}/pokemons/${pokemonState.data.id}.png`} alt={pokemonState.data.name} />
+                     <img src={`${process.env.PUBLIC_URL}/pokemons/${pokemonState.data.id}.png`} alt={pokemonState.data.name} />                     
                   </div>
+                  {catched()}
                </div>
             </div>
          )

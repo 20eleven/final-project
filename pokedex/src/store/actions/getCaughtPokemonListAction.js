@@ -12,7 +12,7 @@ export const getCaughtPokemonList = () => {
             type: CAUGHT_LIST_LOADING
          })
 
-         const res = await axios.get(`http://localhost:5000/caught`) 
+         const res = await axios.get(`http://localhost:5000/caught`)          
          dispatch({
             type: CAUGHT_LIST_SUCCESS,
             payload: res.data

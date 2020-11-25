@@ -2,20 +2,30 @@
   "pokemons": [
     {
       "name": "bulbasaur",
+      "caughtDate": "Wed, 25 Nov 2020 20:01:53 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 1
     },
     {
       "name": "ivysaur",
+      "caughtDate": "Wed, 25 Nov 2020 19:58:17 GMT",
       "isCaught": "true",
+      "className": "catchDisabled",
       "id": 2
     },
     {
       "name": "venusaur",
+      "caughtDate": "Wed, 25 Nov 2020 20:17:52 GMT",
       "isCaught": "true",
+      "className": "catchDisabled",
       "id": 3
     },
     {
       "name": "charmander",
+      "caughtDate": "Wed, 25 Nov 2020 20:08:49 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 4
     },
     {
@@ -24,6 +34,9 @@
     },
     {
       "name": "charizard",
+      "caughtDate": "Wed, 25 Nov 2020 20:19:16 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 6
     },
     {
@@ -48,6 +61,9 @@
     },
     {
       "name": "butterfree",
+      "caughtDate": "Wed, 25 Nov 2020 20:33:58 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 12
     },
     {
@@ -60,6 +76,9 @@
     },
     {
       "name": "beedrill",
+      "caughtDate": "Wed, 25 Nov 2020 20:37:28 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 15
     },
     {
@@ -116,6 +135,9 @@
     },
     {
       "name": "nidoran-f",
+      "caughtDate": "Wed, 25 Nov 2020 20:39:12 GMT",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 29
     },
     {
@@ -3802,15 +3824,51 @@
   "caught": [
     {
       "isCaught": "true",
-      "caughtDate": "Wed Nov 25 2020",
+      "caughtDate": "Wed, 25 Nov 2020 19:55:54 GMT",
       "name": "ivysaur",
       "id": 2
     },
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 03:17:35 GMT",
+      "caughtDate": "Wed, 25 Nov 2020 20:01:53 GMT",
+      "name": "bulbasaur",
+      "id": 1
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:08:45 GMT",
+      "name": "charmander",
+      "id": 4
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:17:52 GMT",
       "name": "venusaur",
       "id": 3
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:19:16 GMT",
+      "name": "charizard",
+      "id": 6
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:33:58 GMT",
+      "name": "butterfree",
+      "id": 12
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:37:28 GMT",
+      "name": "beedrill",
+      "id": 15
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "Wed, 25 Nov 2020 20:39:12 GMT",
+      "name": "nidoran-f",
+      "id": 29
     }
   ]
 }
