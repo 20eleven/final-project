@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import NavBar from '../components/Navigation/NavBar/NavBar'
@@ -7,6 +7,9 @@ import ErrorMsg from '../components/Ui/ErrorMessage/ErrorMsg'
 import Loader from '../components/Ui/Loader/Loader'
 import ReactPaginate from 'react-paginate'
 import './PokemonList.css'
+import { catchPokemon } from '../store/actions/catchPokemonAction'
+
+// import { getPokemon } from '../store/actions/getPokemonActions'
 
 const PokemonList = (props) => { 
    const dispatch = useDispatch()
@@ -14,10 +17,13 @@ const PokemonList = (props) => {
    useEffect(() => {
       fetchData(1)
    }, [])
-
    const fetchData = (page = 1) => {
       dispatch(getPokemonList(page))
    }
+   
+   const caughtPokemonHandle = useCallback((id, name) => {
+      dispatch(catchPokemon(id, name))
+   }, [dispatch])
 
    const showData = () => {
       if (pokemonList.loading) {
@@ -26,18 +32,21 @@ const PokemonList = (props) => {
       if (pokemonList.data !== []) {
          return (
             <div className={'listWrapper'}>
-               {pokemonList.data.map(pokeElement => { //TODO: add key и перенести в отдельный контейнер 
+               {pokemonList.data.map(pokeElement => {
                   return (                  
                      <div className={'pokemonCard'} key={pokeElement.name}>
                         <div className={'imgWrapper'}>
-                           <img src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} alt={`${pokeElement.name}`} />
+                           <img 
+                              src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} 
+                              alt={`${pokeElement.name}`} 
+                              onClick={() => caughtPokemonHandle(pokeElement.id, pokeElement.name)}
+                              // className={() => {
+                              //    if(pokeElement.isCaught) { return 'catchDisabled' }
+                              // }}
+                              className={'catchDisabled'}                             
+                           />
                         </div>
-                       
-                        {/* при нажатии на картинку покемон должен быть пойман, то есть при нажатии все затемняется появляетяс бордер и покемон считается пойманым */}
-                        {/* <div>Caught</div> */}
-                        
-                        <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
-                      
+                       <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
                      </div>                     
                   )
                })}

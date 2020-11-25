@@ -13,9 +13,6 @@ const Input = (props) => {
       }
    }, [])
 
-   // console.log(search);
-   // console.log(searchState);
-
    const handleChange = (event) => {
       setSearch(event.target.value)
    }

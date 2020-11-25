@@ -6,10 +6,12 @@
     },
     {
       "name": "ivysaur",
+      "isCaught": "true",
       "id": 2
     },
     {
       "name": "venusaur",
+      "isCaught": "true",
       "id": 3
     },
     {
@@ -3795,6 +3797,20 @@
     {
       "name": "magearna-original",
       "id": 10147
+    }
+  ],
+  "caught": [
+    {
+      "isCaught": "true",
+      "caughtDate": "2020-11-25T00:02:40.894Z",
+      "name": "ivysaur",
+      "id": 2
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "2020-11-25T00:04:34.335Z",
+      "name": "venusaur",
+      "id": 3
     }
   ]
 }

@@ -1,4 +1,4 @@
-const { POKEMON_MULTIPLE_LOADING, POKEMON_MULTIPLE_FAIL, POKEMON_MULTIPLE_SUCCESS } = require("../actions/actionTypes")
+import { POKEMON_MULTIPLE_LOADING, POKEMON_MULTIPLE_FAIL, POKEMON_MULTIPLE_SUCCESS } from '../actions/actionTypes'
 
 const initialState = {
    loading: false,
