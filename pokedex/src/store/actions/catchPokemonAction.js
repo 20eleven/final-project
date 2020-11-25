@@ -15,7 +15,7 @@ export const catchPokemon = (id, name) => {
 
          await axios.post(`http://localhost:5000/caught`, {
             isCaught: "true",
-            caughtDate: new Date(Date.now()),
+            caughtDate: new Date(Date.now()).toGMTString(),
             name,
             id
          })

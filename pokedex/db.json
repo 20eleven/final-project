@@ -3802,13 +3802,13 @@
   "caught": [
     {
       "isCaught": "true",
-      "caughtDate": "2020-11-25T00:02:40.894Z",
+      "caughtDate": "Wed Nov 25 2020",
       "name": "ivysaur",
       "id": 2
     },
     {
       "isCaught": "true",
-      "caughtDate": "2020-11-25T00:04:34.335Z",
+      "caughtDate": "Wed, 25 Nov 2020 03:17:35 GMT",
       "name": "venusaur",
       "id": 3
     }

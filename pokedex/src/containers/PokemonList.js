@@ -9,11 +9,14 @@ import ReactPaginate from 'react-paginate'
 import './PokemonList.css'
 import { catchPokemon } from '../store/actions/catchPokemonAction'
 
-// import { getPokemon } from '../store/actions/getPokemonActions'
+
 
 const PokemonList = (props) => { 
    const dispatch = useDispatch()
    const pokemonList = useSelector(state => state.pokeList)
+   // console.log(pokemonList.data);
+
+
    useEffect(() => {
       fetchData(1)
    }, [])
@@ -22,8 +25,19 @@ const PokemonList = (props) => {
    }
    
    const caughtPokemonHandle = useCallback((id, name) => {
-      dispatch(catchPokemon(id, name))
+      dispatch(catchPokemon(id, name)) //TODO: выполнить проверку пойман ли уде покемон
    }, [dispatch])
+
+   
+
+   pokemonList.data.forEach(pokemonImgItem => {
+      if(pokemonImgItem.isCaught) {
+         console.log('coughted');
+         
+      }
+   })
+   //TODO: допилить динамическое добавлени класса определенному элементу
+   
 
    const showData = () => {
       if (pokemonList.loading) {
@@ -40,10 +54,8 @@ const PokemonList = (props) => {
                               src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} 
                               alt={`${pokeElement.name}`} 
                               onClick={() => caughtPokemonHandle(pokeElement.id, pokeElement.name)}
-                              // className={() => {
-                              //    if(pokeElement.isCaught) { return 'catchDisabled' }
-                              // }}
-                              className={'catchDisabled'}                             
+                              id={pokeElement.id}
+                              // className={'catchDisabled'}                             
                            />
                         </div>
                        <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
