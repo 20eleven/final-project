@@ -10,14 +10,14 @@ export const catchPokemon = (id, name) => {
       try {
          await axios.put(`http://localhost:5000/pokemons/${id}`, {
             name,
-            caughtDate: new Date(Date.now()).toGMTString(),
+            caughtDate: new Date(Date.now()).toLocaleString(),
             isCaught: "true",
             className: "catchDisabled"
          })
 
          await axios.post(`http://localhost:5000/caught`, {
             isCaught: "true",
-            caughtDate: new Date(Date.now()).toGMTString(),
+            caughtDate: new Date(Date.now()).toLocaleString(),
             name,
             id
          })

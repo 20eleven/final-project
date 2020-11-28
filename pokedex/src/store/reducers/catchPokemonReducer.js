@@ -20,7 +20,7 @@ const catchPokemonReducer = (state = initialState, action) => {
          cachedPokemons.forEach(pokemon => {
             if (pokemon.id === action.id) {
                pokemon.isCaught = "true"
-               pokemon.caughtDate = new Date(Date.now())
+               pokemon.caughtDate = new Date(Date.now()).toLocaleString()
                pokemon.className = "catchDisabled"
             }
          })

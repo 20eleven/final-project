@@ -2,30 +2,24 @@
   "pokemons": [
     {
       "name": "bulbasaur",
-      "caughtDate": "Wed, 25 Nov 2020 20:01:53 GMT",
+      "caughtDate": "29.11.2020, 01:35:14",
       "isCaught": "true",
       "className": "catchDisabled",
       "id": 1
     },
     {
       "name": "ivysaur",
-      "caughtDate": "Wed, 25 Nov 2020 19:58:17 GMT",
+      "caughtDate": "29.11.2020, 01:33:32",
       "isCaught": "true",
       "className": "catchDisabled",
       "id": 2
     },
     {
       "name": "venusaur",
-      "caughtDate": "Wed, 25 Nov 2020 20:17:52 GMT",
-      "isCaught": "true",
-      "className": "catchDisabled",
       "id": 3
     },
     {
       "name": "charmander",
-      "caughtDate": "Wed, 25 Nov 2020 20:08:49 GMT",
-      "isCaught": "true",
-      "className": "catchDisabled",
       "id": 4
     },
     {
@@ -34,7 +28,7 @@
     },
     {
       "name": "charizard",
-      "caughtDate": "Wed, 25 Nov 2020 20:19:16 GMT",
+      "caughtDate": "29.11.2020, 01:35:09",
       "isCaught": "true",
       "className": "catchDisabled",
       "id": 6
@@ -49,6 +43,9 @@
     },
     {
       "name": "blastoise",
+      "caughtDate": "29.11.2020, 01:35:12",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 9
     },
     {
@@ -61,9 +58,6 @@
     },
     {
       "name": "butterfree",
-      "caughtDate": "Wed, 25 Nov 2020 20:33:58 GMT",
-      "isCaught": "true",
-      "className": "catchDisabled",
       "id": 12
     },
     {
@@ -76,9 +70,6 @@
     },
     {
       "name": "beedrill",
-      "caughtDate": "Wed, 25 Nov 2020 20:37:28 GMT",
-      "isCaught": "true",
-      "className": "catchDisabled",
       "id": 15
     },
     {
@@ -135,9 +126,6 @@
     },
     {
       "name": "nidoran-f",
-      "caughtDate": "Wed, 25 Nov 2020 20:39:12 GMT",
-      "isCaught": "true",
-      "className": "catchDisabled",
       "id": 29
     },
     {
@@ -2730,6 +2718,9 @@
     },
     {
       "name": "espurr",
+      "caughtDate": "29.11.2020, 01:36:23",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 677
     },
     {
@@ -2882,10 +2873,16 @@
     },
     {
       "name": "noivern",
+      "caughtDate": "29.11.2020, 01:35:49",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 715
     },
     {
       "name": "xerneas",
+      "caughtDate": "29.11.2020, 01:35:48",
+      "isCaught": "true",
+      "className": "catchDisabled",
       "id": 716
     },
     {
@@ -3824,51 +3821,45 @@
   "caught": [
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 19:55:54 GMT",
+      "caughtDate": "29.11.2020, 01:33:32",
       "name": "ivysaur",
       "id": 2
     },
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:01:53 GMT",
-      "name": "bulbasaur",
-      "id": 1
-    },
-    {
-      "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:08:45 GMT",
-      "name": "charmander",
-      "id": 4
-    },
-    {
-      "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:17:52 GMT",
-      "name": "venusaur",
-      "id": 3
-    },
-    {
-      "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:19:16 GMT",
+      "caughtDate": "29.11.2020, 01:35:09",
       "name": "charizard",
       "id": 6
     },
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:33:58 GMT",
-      "name": "butterfree",
-      "id": 12
+      "caughtDate": "29.11.2020, 01:35:12",
+      "name": "blastoise",
+      "id": 9
     },
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:37:28 GMT",
-      "name": "beedrill",
-      "id": 15
+      "caughtDate": "29.11.2020, 01:35:14",
+      "name": "bulbasaur",
+      "id": 1
     },
     {
       "isCaught": "true",
-      "caughtDate": "Wed, 25 Nov 2020 20:39:12 GMT",
-      "name": "nidoran-f",
-      "id": 29
+      "caughtDate": "29.11.2020, 01:35:48",
+      "name": "xerneas",
+      "id": 716
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "29.11.2020, 01:35:49",
+      "name": "noivern",
+      "id": 715
+    },
+    {
+      "isCaught": "true",
+      "caughtDate": "29.11.2020, 01:36:23",
+      "name": "espurr",
+      "id": 677
     }
   ]
 }
