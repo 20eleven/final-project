@@ -19,35 +19,38 @@
    }
 }
 .listWrapper .pokemonCard {
-   background-color: rgba(68, 109, 222, 0.5);
+   background: linear-gradient(230deg, rgba(68, 109, 222, 0.1), rgba(255, 255, 255, 0.2));
    margin: 15px;
    display: flex;
-   height: 300px;
+   height: 320px;
    width: 250px;
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
-   border: 2px solid rgb(237, 85, 84);
+   border-left: 2px solid royalblue;
+   border-bottom: 2px solid royalblue;
+   border-top: 1px solid rgba(237, 84, 84, 0.3);
+   border-right: 1px solid rgba(237, 84, 84, 0.3);
    border-radius: 5px;
 }
 
 .listWrapper .pokemonCard:hover {
    transition: 250ms;
-   box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.4);
-   background-color: rgba(68, 109, 222, 0.3);
+   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+   background: linear-gradient(230deg, rgba(237, 84, 84, 0.1), rgba(255, 255, 255, 0.2));
 }
 
 .pokemonCard a {
    text-decoration: none;
-   background-color: rgba(68, 109, 222, 0.9);
+   background: linear-gradient(90deg, rgba(68, 109, 222, 0.8), transparent);
    width: 100%;
    padding: 3px 0 3px 15px;
    color: #fff;
 }
 
-.listWrapper .pokemonCard:hover a {
-   background-color: royalblue;
-   color: white;
+.listWrapper .pokemonCard a:hover {
+   background: linear-gradient(90deg, royalblue, transparent);
+   transition: 250ms;
 }
 
 .listWrapper .pokemonCard .imgWrapper {
