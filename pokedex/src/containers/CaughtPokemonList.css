@@ -22,7 +22,7 @@
 }
 
 .caughtListWrapper .caughtPokemonCard {
-   background-color: rgba(68, 109, 222, 0.1);
+   background: linear-gradient(180deg, rgba(68, 109, 222, 0.1), rgba(214, 225, 255, 0.3));
    margin: 15px;
    display: flex;
    height: 360px;

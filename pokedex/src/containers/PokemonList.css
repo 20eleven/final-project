@@ -61,7 +61,13 @@
 .listWrapper .pokemonCard .imgWrapper img {
    height: 100%;
    width: auto;
-   /* cursor: pointer; */
+}
+
+.able:hover {
+   cursor: pointer;
+   transform: rotate(3deg);
+   z-index: 1;
+   transition: 250ms;
 }
 
 .catchDisabled {

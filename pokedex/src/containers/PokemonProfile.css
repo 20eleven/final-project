@@ -2,6 +2,7 @@
    margin: 75px auto auto auto;;
    text-align: center;
    color: royalblue;
+   min-height: 530px;
 }
 
 .pokemonWrapper .item {

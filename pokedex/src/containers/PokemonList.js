@@ -9,29 +9,35 @@ import ReactPaginate from 'react-paginate'
 import './PokemonList.css'
 import { catchPokemon } from '../store/actions/catchPokemonAction'
 import { inputSearch } from '../store/actions/inputSearchActions'
+// import { getPokemon } from '../store/actions/getPokemonActions'
 
 const PokemonList = (props) => { 
    const dispatch = useDispatch()
    const pokemonList = useSelector(state => state.pokeList)
-   // console.log(pokemonList.data);
 
    const searchState = useSelector(state => state.pokeSearch)
    const handleChange = useCallback((event) => {
       dispatch(inputSearch(event.target.value))
    }, [dispatch])
-   // console.log(searchState);
-   //TODO: допилить передачу данных для рендера покемонов из поиска
+   console.log(searchState)
+
+   // const onePokemon = useSelector(state => state.pokeProfile)
+   // console.log(onePokemon);
 
    useEffect(() => {
       fetchData(1)
    }, [])
    const fetchData = (page = 1) => {
       dispatch(getPokemonList(page))
-   }
+   }   
    
    const caughtPokemonHandle = useCallback((id, name, caught) => {
       if (!caught) {
          dispatch(catchPokemon(id, name))
+         // TODO: необходимо подгружать определенного покемона для изменения класса стилей 
+         // fetchData(1) // обновление страницы вполне работает 
+         // dispatch(getPokemon(id)) //FIXME: делать запросы в другом порядке, сейчас сперва идет GET. а уже после меняет данные PUT, так что изменения не происходят сразу 
+         
       }     
    }, [dispatch])
    
@@ -50,8 +56,8 @@ const PokemonList = (props) => {
                               src={`${process.env.PUBLIC_URL}/pokemons/${pokeElement.id}.png`} 
                               alt={`${pokeElement.name}`} 
                               onClick={() => caughtPokemonHandle(pokeElement.id, pokeElement.name, pokeElement.isCaught)}
-                              className={pokeElement.className}                             
-                           />
+                              className={pokeElement.className || 'able'}                             
+                           />                           
                         </div>
                        <Link to={`/pokemon/${pokeElement.id}`}>{pokeElement.name.toUpperCase()}</Link>
                      </div>                     
